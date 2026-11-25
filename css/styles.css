@@ -27,6 +27,11 @@ html { scroll-padding-top: var(--header-h, 88px); }
 #navbar.nav-scrolled { padding-top: 2px; padding-bottom: 2px; box-shadow: 0 2px 0 0 #4A3518; }
 #navbar .nav-link { position: relative; }
 #navbar .nav-link.nav-link-active { background: #4A3518; color: #F5F0E8; }
+#mobile-menu {
+    max-height: calc(100vh - var(--header-h, 88px));
+    max-height: calc(100dvh - var(--header-h, 88px));
+    overscroll-behavior: contain;
+}
 
 .nav-dropdown-menu {
     position: absolute;
