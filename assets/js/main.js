@@ -144,45 +144,14 @@ function showToast(msg) {
 })();
 
 function handleSub(e) {
-    e.preventDefault();
-    const form = document.getElementById('subscription-form');
-    const errorEl = document.getElementById('sub-error');
-    const submitBtn = document.getElementById('sub-submit-btn');
-    const submitLabel = document.getElementById('sub-submit-label');
-    errorEl.classList.add('hidden');
-    errorEl.textContent = '';
-
-    const data = {};
-    new FormData(form).forEach((val, key) => { data[key] = val; });
-
-    submitBtn.disabled = true;
-    submitLabel.textContent = 'Submitting...';
-
-    const csrfMeta = document.querySelector('meta[name="csrf-token"]');
-    fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'x-csrf-token': csrfMeta ? csrfMeta.content : '' },
-        credentials: 'include',
-        body: JSON.stringify(data)
-    })
-    .then(r => r.json().then(body => ({ ok: r.ok, body })))
-    .then(function(result) {
-        if (!result.ok) throw new Error(result.body.error || 'Something went wrong. Please try again.');
-        form.classList.add('hidden');
-        document.getElementById('sub-success').classList.remove('hidden');
-        lucide.createIcons({ attrs: { strokeWidth: 1.5 } });
-        showToast('Welcome to RAKI ☕');
-        trackEvent('subscribe_success', { plan: data.plan || '' });
-    })
-    .catch(function(err) {
-        errorEl.textContent = err.message;
-        errorEl.classList.remove('hidden');
-    })
-    .finally(function() {
-        submitBtn.disabled = false;
-        submitLabel.textContent = 'Subscribe Now';
-    });
+    var submitBtn = document.getElementById('sub-submit-btn');
+    var submitLabel = document.getElementById('sub-submit-label');
+    if (submitBtn) submitBtn.disabled = true;
+    if (submitLabel) submitLabel.textContent = 'Sending...';
 }
+
+var _subscriptionForm = document.getElementById('subscription-form');
+if (_subscriptionForm) _subscriptionForm.addEventListener('submit', handleSub);
 
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e) {
@@ -469,41 +438,8 @@ function closeTrailBookingModal() {
 function handleTrailBooking(e) {
     e.preventDefault();
     var form = document.getElementById('trail-booking-form');
-    var errorEl = document.getElementById('trail-booking-error');
-    var submitBtn = document.getElementById('trail-booking-submit-btn');
-    var submitLabel = document.getElementById('trail-booking-submit-label');
-    errorEl.classList.add('hidden');
-    errorEl.textContent = '';
-
-    var data = {};
-    new FormData(form).forEach(function(val, key) { data[key] = val; });
-
-    submitBtn.disabled = true;
-    submitLabel.textContent = 'Submitting...';
-
-    var csrfMeta = document.querySelector('meta[name="csrf-token"]');
-    fetch('/api/trail-booking', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'x-csrf-token': csrfMeta ? csrfMeta.content : '' },
-        credentials: 'include',
-        body: JSON.stringify(data)
-    })
-    .then(function(r) { return r.json().then(function(body) { return { ok: r.ok, body: body }; }); })
-    .then(function(result) {
-        if (!result.ok) throw new Error(result.body.error || 'Something went wrong. Please try again.');
-        form.classList.add('hidden');
-        document.getElementById('trail-booking-success').classList.remove('hidden');
-        lucide.createIcons({ attrs: { strokeWidth: 1.5 } });
-        trackEvent('trail_booking_success', { trail: data.trail_name || '' });
-    })
-    .catch(function(err) {
-        errorEl.textContent = err.message;
-        errorEl.classList.remove('hidden');
-    })
-    .finally(function() {
-        submitBtn.disabled = false;
-        submitLabel.textContent = _trailBookingSubmitLabel;
-    });
+    if (!form) return;
+    if (typeof showToast === 'function') showToast('Please use the website contact form');
 }
 
 function loadVideoEmbed(el) {
