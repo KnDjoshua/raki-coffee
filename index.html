@@ -298,28 +298,58 @@
     <div id="main-content" tabindex="-1"></div>
 
 
-    <!-- WHO WE ARE / VISION / MISSION -->
-    <section id="who-we-are" class="pt-32 pb-16 md:pt-40 md:pb-24 bg-cream" style="padding-top: 113px; opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+    <!-- HOME HERO / VISION / MISSION -->
+    <section id="who-we-are" class="pt-32 pb-16 md:pt-40 md:pb-24 bg-cream" style="padding-top: calc(var(--header-h, 88px) + 2rem); opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <div class="inline-flex items-center gap-2 mb-4">
+            <div class="grid lg:grid-cols-2 overflow-hidden rounded-xl border-2 border-bark-700 bg-bark-700 text-sand hard-shadow-lg">
+                <div class="flex flex-col justify-center px-6 py-10 sm:px-10 sm:py-14 lg:px-14">
+                    <div class="inline-flex items-center gap-2 mb-5">
                         <span class="w-6 h-0.5 bg-accent-red"></span>
-                        <span class="text-accent-red text-xs font-mono font-bold uppercase tracking-widest">Who We Are</span>
+                        <span class="text-bark-300 text-[10px] font-mono font-bold uppercase tracking-[0.2em]">Ugandan Specialty Coffee</span>
                     </div>
-                    <h1 class="font-display text-4xl md:text-5xl font-bold text-bark-700 leading-tight mb-6">Coffee with a Traceable Soul.</h1>
-                    <div class="mb-6">
-                        <span class="text-[9px] font-mono font-bold uppercase tracking-widest text-bark-400 block mb-1.5">Our Vision</span>
-                        <p class="text-bark-700 leading-relaxed">Our vision is to export premium single-origin Ugandan specialty coffee while transforming the lives of the farmers behind every bean.</p>
+                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-5">Coffee with a <span class="text-bark-300">traceable soul.</span></h1>
+                    <p class="max-w-xl text-base md:text-lg text-sand leading-relaxed mb-8">Single-origin Ugandan coffee, grown with care and traceable from the farm to your cup.</p>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="./Shop%20%26%20Subscribe%20%E2%80%94%20RAKI%20Coffee%20Co..html#buy" class="inline-flex items-center justify-center gap-2 rounded-md bg-accent-red px-5 py-3 text-xs font-bold uppercase tracking-wider text-sand transition-colors hover:bg-red-800">
+                            Shop Coffee
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                        </a>
+                        <a href="./Meraki%20Trail%20%E2%80%94%20Book%20an%20Experience%20%E2%80%94%20RAKI%20Coffee%20Co..html#meraki" class="inline-flex items-center justify-center rounded-md border-2 border-bark-400 px-5 py-3 text-xs font-bold uppercase tracking-wider text-sand transition-colors hover:bg-sand hover:text-bark-700">Explore the Meraki Trail</a>
                     </div>
-                    <div class="mb-8">
-                        <span class="text-[9px] font-mono font-bold uppercase tracking-widest text-bark-400 block mb-1.5">Our Mission</span>
-                        <p class="text-bark-600 leading-relaxed">We are committed to inclusive economic growth, sustainable agriculture, women's empowerment, youth employment, and fair trade — connecting the world to the people behind every cup.</p>
-                    </div>
-                    <a href="./About%20Us%20%E2%80%94%20RAKI%20Coffee%20Co..html#story" class="inline-flex items-center gap-1.5 text-bark-700 font-bold text-xs uppercase tracking-wider underline underline-offset-4 decoration-bark-400 hover:decoration-bark-700 transition-colors">Read Our Full Story <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" strokeWidth="1.5" class="lucide lucide-arrow-right w-3.5 h-3.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
                 </div>
-                <div class="border-2 border-bark-700 rounded-lg hard-shadow overflow-hidden">
-                    <img src="./assets/coffee/Coffee begins in shaded nurseries, where seedlings are nurtured for 6-9 months before they're strong enough to plant..jpg" alt="A farmer holding a young coffee seedling in the nursery" class="w-full h-[420px] object-cover" loading="lazy" decoding="async">
+                <div class="relative min-h-[320px] sm:min-h-[420px] lg:min-h-[560px]">
+                    <img src="./assets/coffee/Coffee begins in shaded nurseries, where seedlings are nurtured for 6-9 months before they're strong enough to plant..jpg" alt="A farmer tending a coffee plant on the farm" class="absolute inset-0 h-full w-full object-cover object-center" loading="eager" fetchpriority="high" decoding="async">
+                    <div class="absolute bottom-5 left-5 right-5 border border-bark-400 bg-bark-900 px-5 py-4">
+                        <span class="block text-[9px] font-mono font-bold uppercase tracking-[0.2em] text-bark-300 mb-1">From farm to cup</span>
+                        <p class="font-display text-lg font-bold text-sand">Grown with purpose. Shared with pride.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 grid sm:grid-cols-3 border-y-2 border-bark-300 divide-y-2 sm:divide-y-0 sm:divide-x-2 sm:divide-bark-300">
+                <div class="py-4 sm:px-5">
+                    <span class="block text-[9px] font-mono font-bold uppercase tracking-widest text-accent-red mb-1">Origin</span>
+                    <p class="font-display text-lg font-bold text-bark-700">Ugandan-grown</p>
+                </div>
+                <div class="py-4 sm:px-5">
+                    <span class="block text-[9px] font-mono font-bold uppercase tracking-widest text-accent-red mb-1">Journey</span>
+                    <p class="font-display text-lg font-bold text-bark-700">Farm-to-cup traceability</p>
+                </div>
+                <div class="py-4 sm:px-5">
+                    <span class="block text-[9px] font-mono font-bold uppercase tracking-widest text-accent-red mb-1">People</span>
+                    <p class="font-display text-lg font-bold text-bark-700">Community first</p>
+                </div>
+            </div>
+
+            <div class="mt-10 grid md:grid-cols-2 gap-8 md:gap-12">
+                <div class="border-l-2 border-accent-red pl-5">
+                    <span class="text-[9px] font-mono font-bold uppercase tracking-widest text-bark-400 block mb-2">Our Vision</span>
+                    <p class="text-sm text-bark-700 leading-relaxed">Our vision is to export premium single-origin Ugandan specialty coffee while transforming the lives of the farmers behind every bean.</p>
+                </div>
+                <div class="border-l-2 border-accent-red pl-5">
+                    <span class="text-[9px] font-mono font-bold uppercase tracking-widest text-bark-400 block mb-2">Our Mission</span>
+                    <p class="text-sm text-bark-600 leading-relaxed">We are committed to inclusive economic growth, sustainable agriculture, women's empowerment, youth employment, and fair trade — connecting the world to the people behind every cup.</p>
+                    <a href="./About%20Us%20%E2%80%94%20RAKI%20Coffee%20Co..html#story" class="inline-flex items-center gap-1.5 mt-4 text-bark-700 font-bold text-[10px] uppercase tracking-wider underline underline-offset-4 decoration-bark-400 hover:decoration-bark-700 transition-colors">Read Our Full Story <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" strokeWidth="1.5" class="lucide lucide-arrow-right w-3.5 h-3.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
                 </div>
             </div>
         </div>
