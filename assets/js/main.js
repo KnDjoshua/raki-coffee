@@ -388,6 +388,12 @@ function releaseFocus() {
     _focusTrapReturnEl = null;
 }
 document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        var detailModal = document.getElementById('detail-modal');
+        var trailModal = document.getElementById('trail-booking-modal');
+        if (detailModal && detailModal.classList.contains('active')) closeDetailModal();
+        if (trailModal && trailModal.classList.contains('active')) closeTrailBookingModal();
+    }
     if (e.key !== 'Tab' || !_focusTrapEl) return;
     var focusable = Array.prototype.slice.call(_focusTrapEl.querySelectorAll('a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])'));
     if (!focusable.length) return;
