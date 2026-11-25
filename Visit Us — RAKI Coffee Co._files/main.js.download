@@ -4,6 +4,8 @@ const mobileToggle = document.getElementById('mobile-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
 function setMobileMenuOpen(open) {
     if (!mobileToggle || !mobileMenu) return;
+    document.documentElement.classList.toggle('mobile-nav-open', open);
+    document.body.classList.toggle('mobile-nav-open', open);
     mobileMenu.classList.toggle('hidden', !open);
     mobileToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     mobileToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
