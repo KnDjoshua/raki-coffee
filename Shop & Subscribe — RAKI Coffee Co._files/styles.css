@@ -28,10 +28,16 @@ html { scroll-padding-top: var(--header-h, 88px); }
 #navbar .nav-link { position: relative; }
 #navbar .nav-link.nav-link-active { background: #4A3518; color: #F5F0E8; }
 #mobile-menu {
+    position: fixed;
+    top: var(--header-h, 88px);
+    right: 0;
+    bottom: 0;
+    left: 0;
     max-height: calc(100vh - var(--header-h, 88px));
     max-height: calc(100dvh - var(--header-h, 88px));
     overscroll-behavior: contain;
 }
+html.mobile-nav-open, body.mobile-nav-open { overflow: hidden; }
 #buy .card-hover > div:first-child > svg,
 #buy .card-hover > div:first-child > span {
     display: none;
