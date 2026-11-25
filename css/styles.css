@@ -5,6 +5,26 @@ html { scroll-padding-top: var(--header-h, 88px); }
 .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
 ::selection { background: #4A3518; color: #F5F0E8; }
 
+.home-hero-photo { min-height: 22rem; }
+.home-proof-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 2px solid #D4C4A8;
+    border-bottom: 2px solid #D4C4A8;
+}
+.home-proof-item { padding: 1rem 1.25rem; }
+.home-proof-item + .home-proof-item { border-left: 2px solid #D4C4A8; }
+@media (min-width: 640px) {
+    .home-hero-photo { min-height: 26rem; }
+}
+@media (min-width: 1024px) {
+    .home-hero-photo { min-height: 35rem; }
+}
+@media (max-width: 639px) {
+    .home-proof-strip { grid-template-columns: 1fr; }
+    .home-proof-item + .home-proof-item { border-left: 0; border-top: 2px solid #D4C4A8; }
+}
+
 .skip-link {
     position: absolute;
     top: -100px;
