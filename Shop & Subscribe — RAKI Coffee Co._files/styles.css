@@ -32,7 +32,10 @@ html { scroll-padding-top: var(--header-h, 88px); }
     max-height: calc(100dvh - var(--header-h, 88px));
     overscroll-behavior: contain;
 }
-
+#buy .card-hover > div:first-child > svg,
+#buy .card-hover > div:first-child > span {
+    display: none;
+}
 .nav-dropdown-menu {
     position: absolute;
     top: 100%;
